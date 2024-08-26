@@ -1,0 +1,381 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f7fc;
+    color: #333;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    position: relative;
+}
+
+nav h2 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+nav .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* "Get started" button */
+.get-started {
+    background-color: #2f8bfd;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.get-started:hover {
+    background-color: #2568c7;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 90px 20px;
+    background-color: #e9f3ff;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.subscribe {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.subscribe input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    width: 300px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.subscribe button {
+    padding: 10px 20px;
+    background-color: #bd4714;
+    color: #ffffff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.subscribe button:hover {
+    background-color: #2568c7;
+}
+
+.trusted {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Features section */
+.features {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.feature-item {
+    text-align: center;
+    margin: 20px;
+    flex: 1 1 200px; /* Allow items to shrink and grow, with a minimum width */
+}
+
+.feature-item img {
+    max-width: 100%;
+    height: auto; /* Ensure images scale properly */
+}
+
+.feature-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Navigation links for mobile */
+.nav-links {
+    display: none; /* Hide links by default */
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+}
+
+.nav-links.active {
+    display: flex; /* Show links when active */
+}
+
+.nav-links li {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-links li:last-child {
+    border-bottom: none;
+}
+
+.nav-links li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Show hamburger menu button */
+    }
+
+    .get-started {
+        display: none; /* Hide the 'Get started' button on small screens */
+    }
+}
+
+@media (max-width: 425px) {
+    .hero h1 {
+        font-size: 32px; /* Adjust font size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .subscribe input,
+    .subscribe button {
+        width: 100%; /* Make input field and button full width */
+        box-sizing: border-box; /* Ensure full width includes padding and border */
+    }
+
+    .nav-toggle {
+        font-size: 20px; /* Adjust hamburger icon size */
+    }
+}
+
+
+/* Responsive styles */
+@media (max-width: 786px) {
+    nav ul {
+        display: none; /* Hide desktop menu links */
+    }
+
+    nav .nav-toggle {
+        display: block; /* Show hamburger menu button */
+    }
+
+    .nav-links {
+        display: none; /* Hide menu links initially */
+    }
+
+    .nav-toggle.active + .nav-links {
+        display: flex; /* Show menu when toggle is active */
+    }
+
+    .get-started {
+        display: none; /* Hide the 'Get started' button on smaller screens */
+    }
+
+    .hero {
+        padding: 60px 20px; /* Reduce padding for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 32px; /* Adjust font size */
+    }
+
+    .hero p {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .subscribe input,
+    .subscribe button {
+        width: 100%; /* Full width for input and button */
+        box-sizing: border-box;
+    }
+
+    .features {
+        margin-top: 30px; /* Reduce top margin */
+    }
+
+    .feature-item {
+        margin: 10px; /* Reduce margin */
+        flex: 1 1 100%; /* Full width for feature items */
+    }
+
+    .feature-item h3 {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .feature-item p {
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 425px) {
+    .hero h1 {
+        font-size: 28px; /* Further reduce font size */
+    }
+
+    .hero p {
+        font-size: 14px; /* Further reduce font size */
+    }
+
+    .subscribe input,
+    .subscribe button {
+        max-width: 100%; /* Ensure full width */
+    }
+
+    .nav-toggle {
+        font-size: 20px; /* Adjust hamburger icon size */
+    }
+
+    .feature-item {
+        margin: 5px; /* Further reduce margin */
+    }
+
+    .feature-item h3 {
+        font-size: 14px; /* Further reduce font size */
+    }
+
+    .feature-item p {
+        font-size: 12px; /* Further reduce font size */
+    }
+}
+
+@media (max-width: 546px) {
+    .hero {
+        padding: 40px 10px; /* Further reduce padding */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Further reduce font size */
+    }
+
+    .hero p {
+        font-size: 14px; /* Further reduce font size */
+    }
+
+    .subscribe input,
+    .subscribe button {
+        max-width: 100%; /* Ensure full width */
+    }
+
+    .nav-toggle {
+        font-size: 18px; /* Adjust hamburger icon size */
+    }
+
+    .feature-item {
+        margin: 5px; /* Further reduce margin */
+    }
+
+    .feature-item h3 {
+        font-size: 14px; /* Further reduce font size */
+    }
+
+    .feature-item p {
+        font-size: 12px; /* Further reduce font size */
+    }
+}
+
+@media (max-width: 551px) {
+    .hero {
+        padding: 40px 10px; /* Further reduce padding */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Further reduce font size */
+    }
+
+    .hero p {
+        font-size: 14px; /* Further reduce font size */
+    }
+
+    .subscribe input,
+    .subscribe button {
+        max-width: 100%; /* Ensure full width */
+    }
+
+    .nav-toggle {
+        font-size: 18px; /* Adjust hamburger icon size */
+    }
+
+    .feature-item {
+        margin: 5px; /* Further reduce margin */
+    }
+
+    .feature-item h3 {
+        font-size: 14px; /* Further reduce font size */
+    }
+
+    .feature-item p {
+        font-size: 12px; /* Further reduce font size */
+    }
+}
